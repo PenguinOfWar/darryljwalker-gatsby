@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSpring, animated } from 'react-spring';
 
-const SocialIcon = ({ children, className, href }) => {
+const FadeLink = ({ children, className, href }) => {
   const props = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 1000 });
   return (
     <animated.a className={className} href={href} style={props}>
@@ -10,4 +10,4 @@ const SocialIcon = ({ children, className, href }) => {
   );
 };
 
-export default SocialIcon;
+export default FadeLink;

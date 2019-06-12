@@ -41,6 +41,8 @@ $backgroundGrey: #1d1d1b;
 $backgroundPurple: #441470;
 $backgroundRed: $backgroundPurple;
 $textWhite: #ffffff;
+$textOrange: #FF8C00;
+$textGold: #FFD700;
 
 body {
   background: $backgroundGrey;
@@ -139,6 +141,25 @@ body {
       .social {
         font-size: 3em;
 
+        &.mx5 {
+          padding-top: 30px;
+        }
+
+        .descriptor {
+          font-size: .5em;
+        }
+
+        .social-icon {
+          display: inline-block;
+
+          .fa,
+          .fa-stack {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+
         a {
           color: $white;
           opacity: 0;
@@ -158,6 +179,24 @@ body {
         }
       }
     }
+  }
+}
+
+.amy-img {
+  border: 10px solid $textOrange;
+  margin: auto auto 30px;
+  max-width: 300px;
+}
+
+a {
+  color: $textOrange;
+  pointer-events: all;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $textGold;
+    transition: color 0.5s ease;
   }
 }
 
