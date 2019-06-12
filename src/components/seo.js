@@ -68,6 +68,12 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription
         }
       ].concat(meta)}
+      script={[
+        {
+          src: 'https://use.fontawesome.com/119c031034.js',
+          type: 'text/javascript'
+        }
+      ]}
     />
   );
 }

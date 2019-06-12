@@ -1,8 +1,10 @@
 import React from 'react';
 import Typed from 'typed.js';
+import Parallax from 'parallax-js';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import SocialIcon from '../components/social-icon';
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -12,25 +14,23 @@ class IndexPage extends React.Component {
         {
           key: 'name',
           strings: ['Darryl Walker']
-        },
-        {
-          key: 'job',
-          strings: ['Full Stack Developer 🎩']
         }
       ]
     };
   }
 
   componentDidMount() {
+    const scene = document.getElementById('scene');
+
+    new Parallax(scene);
+
     const { elems } = this.state;
 
     elems.map((elem, i) => {
       const { key, strings } = elem;
       const startDelay = (i + 1) * 250;
 
-      console.log(startDelay);
-
-      this.typed = new Typed(this[key], {
+      return new Typed(this[key], {
         strings,
         startDelay,
         typeSpeed: 25,
@@ -40,6 +40,8 @@ class IndexPage extends React.Component {
   }
 
   render() {
+    const { visible } = this.state;
+
     return (
       <Layout>
         <SEO title="Home" />
@@ -57,50 +59,29 @@ class IndexPage extends React.Component {
                 this.job = el;
               }}
             />
-            <h3 className="type-me">
-              <span className="sr-only">Appalling and Contrary Rascal 🐧</span>
-            </h3>
             <ul className="list-unstyled">
-              <li className="type-me">
-                <span className="sr-only">HTML5, CSS3 🖌</span>
-              </li>
-              <li className="type-me">
-                <span className="sr-only">JavaScript 🖥️</span>
-              </li>
-              <li className="type-me">
-                <span className="sr-only">React ⚛️</span>
-              </li>
-              <li className="type-me">
-                <span className="sr-only">Vue 📓</span>
-              </li>
-              <li className="type-me">
-                <span className="sr-only">PHP 🔮</span>
-              </li>
-              <li className="type-me">
-                <span className="sr-only">Ruby 💎</span>
-              </li>
-              <li className="type-me">
-                <span className="sr-only">Progressive 📈</span>
-              </li>
-              <li className="type-me">
-                <span className="sr-only">Responsive 📱</span>
-              </li>
-              <li className="type-me">
-                <span className="sr-only">Awesome 👌</span>
-              </li>
               <li className="social">
-                <a href="https://github.com/PenguinOfWar">
+                <SocialIcon
+                  className="social-icon"
+                  href="https://github.com/PenguinOfWar"
+                >
                   <i className="fa fa-github" aria-hidden="true"></i>
                   <span className="sr-only">Github</span>
-                </a>
-                <a href="https://twitter.com/PenguinOfWar">
+                </SocialIcon>
+                <SocialIcon
+                  className="social-icon"
+                  href="https://twitter.com/PenguinOfWar"
+                >
                   <i className="fa fa-twitter" aria-hidden="true"></i>
                   <span className="sr-only">Twitter</span>
-                </a>
-                <a href="mailto:darryl@ctmh.co.uk">
+                </SocialIcon>
+                <SocialIcon
+                  className="social-icon"
+                  href="mailto:darryl@ctmh.co.uk"
+                >
                   <i className="fa fa-envelope" aria-hidden="true"></i>
                   <span className="sr-only">Mail</span>
-                </a>
+                </SocialIcon>
               </li>
             </ul>
           </div>

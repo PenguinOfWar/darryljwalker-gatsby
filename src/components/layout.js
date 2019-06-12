@@ -22,11 +22,7 @@ const Layout = ({ children }) => (
         }
       }
     `}
-    render={() => (
-      <>
-        <div className="container-fluid app">{children}</div>
-      </>
-    )}
+    render={() => <div className="container-fluid app">{children}</div>}
   />
 );
 
