@@ -5,7 +5,7 @@ import Parallax from 'parallax-js';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Typist from '../components/typist';
-import Image from '../components/Image';
+import Image from '../components/image';
 import FadeLink from '../components/fade-link';
 
 class MX5 extends React.Component {
